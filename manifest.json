@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "Pinterest Dark Mode Toggle",
+  "version": "1.2",
+  "description": "Toggle persistent dark mode on Pinterest (per host).",
+  "permissions": ["activeTab", "storage", "scripting"],
+  "host_permissions": ["https://*.pinterest.com/*", "https://pinterest.com/*"],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://*.pinterest.com/*", "https://pinterest.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_start",
+      "all_frames": false
+    }
+  ]
+}
